@@ -7,7 +7,8 @@ import android.view.inputmethod.EditorInfo;
 import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.TextView.OnEditorActionListener;
-
+import android.content.Intent;
+import android.view.View;
 
 public class MainActivity extends AppCompatActivity
 implements OnEditorActionListener {
@@ -18,6 +19,11 @@ implements OnEditorActionListener {
     private EditText VisUsername;
     private EditText InvisPass;
 
+    public void onClick(View view)
+    {
+        Intent i = new Intent(this, Login.class);
+        startActivity(i);
+    }
 
 
     @Override
@@ -55,7 +61,8 @@ implements OnEditorActionListener {
 
                    {
                        if (EnteredUser.equalsIgnoreCase("Chris") && EnteredPass.equalsIgnoreCase("Merlin"))
-                           Submit.setText("Correct");
+                           Submit.setText("Click to Login");
+
                        else Submit.setText("Wrong!");
                    }
            }

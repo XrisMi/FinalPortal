@@ -3,4 +3,5 @@
     <string name="username">Username</string>
     <string name="restrictedPass">Password</string>
     <string name="Success">Success</string>
+    <string name="title_activity_login">Login</string>
 </resources>

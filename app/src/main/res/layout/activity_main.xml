@@ -93,17 +93,17 @@
         android:id="@+id/imageView"
         android:layout_width="0dp"
         android:layout_height="250dp"
+        android:layout_marginBottom="34dp"
+        android:layout_marginEnd="23dp"
+        android:layout_marginLeft="23dp"
+        android:layout_marginRight="23dp"
+        android:layout_marginStart="23dp"
+        app:layout_constraintBottom_toTopOf="@+id/VisUsername"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
-        app:srcCompat="@drawable/ic_action_name"
-        tools:layout_constraintRight_creator="1"
+        app:srcCompat="@drawable/nexus"
         tools:layout_constraintBottom_creator="1"
-        app:layout_constraintBottom_toTopOf="@+id/VisUsername"
-        android:layout_marginStart="23dp"
-        android:layout_marginEnd="23dp"
         tools:layout_constraintLeft_creator="1"
-        android:layout_marginBottom="34dp"
-        android:layout_marginLeft="23dp"
-        android:layout_marginRight="23dp" />
+        tools:layout_constraintRight_creator="1" />
 
 </android.support.constraint.ConstraintLayout>

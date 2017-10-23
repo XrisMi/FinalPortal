@@ -61,7 +61,10 @@ implements OnEditorActionListener {
 
                    {
                        if (EnteredUser.equalsIgnoreCase("Chris") && EnteredPass.equalsIgnoreCase("Merlin"))
-                           Submit.setText("Click to Login");
+                       {
+                           Intent i = new Intent(this, Login.class);
+                           startActivity(i);
+                       }
 
                        else Submit.setText("Wrong!");
                    }

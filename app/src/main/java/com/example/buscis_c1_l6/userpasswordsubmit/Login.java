@@ -12,6 +12,8 @@ import android.widget.RadioGroup;
 import android.widget.Spinner;
 import android.widget.TextView;
 
+import org.w3c.dom.Text;
+
 import java.util.Date;
 
 
@@ -29,14 +31,15 @@ public class Login extends AppCompatActivity {
     private Button submitButton;
     private Spinner spinner;
     private ArrayAdapter<CharSequence> spinnerAdapter;
-
     private UserInfo userInfo;
+    private EditText emailField;
+    private TextView emailQuestion;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
 
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.activity_login);
 
         languageSelectors = (RadioGroup) findViewById(R.id.languageSelectors);
         rb1= (RadioButton) findViewById(R.id.radioButton1 );
@@ -49,6 +52,8 @@ public class Login extends AppCompatActivity {
         stateField = (EditText) findViewById(R.id.stateField);
         submitButton = (Button) findViewById(R.id.submitButton);
         spinner = (Spinner) findViewById(R.id.spinner);
+        emailField = (EditText) findViewById(R.id.emailField);
+        emailQuestion = (TextView) findViewById(R.id.emailQuestion);
 
         init();
     }
@@ -108,6 +113,7 @@ public class Login extends AppCompatActivity {
         languagePreferencePrompt.setText(getResources().getString(R.string.lang_pref_spanish));
         cityPrompt.setText(getResources().getString(R.string.city_prompt_spanish));
         statePrompt.setText(getResources().getString(R.string.state_prompt_spanish));
+        emailQuestion.setText(getResources().getString(R.string.email_prompt_spanish));
 
         //Set spinner data again
         spinnerAdapter = ArrayAdapter.createFromResource(Login.this, R.array.question_array_spanish, android.R.layout.simple_spinner_item);
@@ -117,7 +123,7 @@ public class Login extends AppCompatActivity {
 
     private void setUserInfoWithEnteredData() {
         String memberStatus = spinner.getSelectedItem().toString();
-        userInfo.setInfo(languagePreference, memberStatus, cityField.getText().toString(), stateField.getText().toString());
+        userInfo.setInfo(languagePreference, memberStatus, cityField.getText().toString(), stateField.getText().toString(), emailField.getText().toString());
         userInfo.print();
     }
 
@@ -129,6 +135,7 @@ public class Login extends AppCompatActivity {
         String city;
         String state;
         Date currentDate;
+        String email;
 
         public UserInfo() {
 
@@ -140,13 +147,15 @@ public class Login extends AppCompatActivity {
             memberStatus = "Student";
             city = "Sacramento";
             state = "CA";
+            email = "email";
         }
 
-        void setInfo(String languagePreference, String memberStatus, String city, String state) {
+        void setInfo(String preference, String languagePreference, String memberStatus, String city, String state) {
             this.languagePreference = languagePreference;
             this.memberStatus = memberStatus;
             this.city = city;
             this.state = state;
+            this.email = email;
         }
 
         //For debugging purposes
@@ -154,4 +163,5 @@ public class Login extends AppCompatActivity {
             Log.d("Filter", "Info "+languagePreference+" "+memberStatus+" "+city+" "+state+" "+ currentDate.toString());
         }
     }
+
 }

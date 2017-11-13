@@ -11,10 +11,10 @@ import android.widget.RadioButton;
 import android.widget.RadioGroup;
 import android.widget.Spinner;
 import android.widget.TextView;
-
-import org.w3c.dom.Text;
-
+import android.widget.CalendarView;
+import android.widget.CalendarView.OnDateChangeListener;
 import java.util.Date;
+import android.widget.Toast;
 
 
 public class Login extends AppCompatActivity {
@@ -34,6 +34,28 @@ public class Login extends AppCompatActivity {
     private UserInfo userInfo;
     private EditText emailField;
     private TextView emailQuestion;
+
+
+    public class CalendarActivity extends AppCompatActivity {
+        private static final String TAG = "CalendarActivity";
+        private CalendarView calendarView;
+        private Toast toast; ;
+        @Override
+        protected void onCreate(Bundle savedInstanceState) {
+            super.onCreate(savedInstanceState);
+            setContentView(R.layout.activity_calendar);
+            calendarView = (CalendarView) findViewById(R.id.calendarView);
+            calendarView.setOnDateChangeListener(new OnDateChangeListener() {
+                @Override
+                public void onSelectedDayChange(CalendarView view, int year, int month,
+                                                int dayOfMonth) {
+                    Toast.makeText(getApplicationContext(), ""+dayOfMonth, 0).show();// TODO Auto-generated method stub
+
+                }
+            });
+
+        }
+    }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

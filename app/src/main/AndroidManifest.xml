@@ -20,6 +20,21 @@
             android:name=".Login"
             android:label="@string/title_activity_login"
             android:theme="@style/AppTheme.NoActionBar"></activity>
+        <activity
+            android:name=".ThirdPage"
+            android:label="ThirdPage"
+            android:theme="@style/AppTheme.NoActionBar">
+        </activity>
+        <activity
+            android:name=".bio"
+            android:label="@string/bio_app"
+            android:theme="@style/AppTheme.NoActionBar">
+        </activity>
+        <activity
+            android:name=".ThankYou"
+            android:label="@string/thank_you"
+            android:theme="@style/AppTheme.NoActionBar">
+        </activity>
     </application>
 
 </manifest>

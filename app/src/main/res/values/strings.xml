@@ -36,4 +36,20 @@
     <string name="ca">CA</string>
     <string name="sacramento">Sacramento</string>
     <string name="submit">SUBMIT</string>
+
+    <string name="picture_description">A Selfie of myself</string>
+    <string name="rate_me">Rate Me</string>
+    <string name="submitTwo">Submit</string>
+    <string name="result">Result :</string>
+    <string name="blank" />
+    <string name="my_app_bio">My app/Bio</string>
+    <string name="thank_you">Thank you!</string>
+    <string name="a_screenshot_of_my_app">A screenshot of my app</string>
+    <string name="bio_app">Hello, my name is Chris Mataragas, I\'m majoring in Computer Information
+    Science here at Sacramento City College, I plan on transferring to a state university at a
+    later date. The app I have built for the purpose of this class is pictured above, it is a simple
+    note taking app that lets users create and access notes very quickly. I appreciate you taking
+    the time to check out my app and I hope you try it out on Google Play!</string>
+
+
 </resources>

@@ -1,5 +1,6 @@
 package com.example.buscis_c1_l6.userpasswordsubmit;
 
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
@@ -11,11 +12,7 @@ import android.widget.RadioButton;
 import android.widget.RadioGroup;
 import android.widget.Spinner;
 import android.widget.TextView;
-import android.widget.CalendarView;
-import android.widget.CalendarView.OnDateChangeListener;
 import java.util.Date;
-import android.widget.Toast;
-
 
 public class Login extends AppCompatActivity {
 
@@ -35,27 +32,6 @@ public class Login extends AppCompatActivity {
     private EditText emailField;
     private TextView emailQuestion;
 
-
-    public class CalendarActivity extends AppCompatActivity {
-        private static final String TAG = "CalendarActivity";
-        private CalendarView calendarView;
-        private Toast toast; ;
-        @Override
-        protected void onCreate(Bundle savedInstanceState) {
-            super.onCreate(savedInstanceState);
-            setContentView(R.layout.activity_calendar);
-            calendarView = (CalendarView) findViewById(R.id.calendarView);
-            calendarView.setOnDateChangeListener(new OnDateChangeListener() {
-                @Override
-                public void onSelectedDayChange(CalendarView view, int year, int month,
-                                                int dayOfMonth) {
-                    Toast.makeText(getApplicationContext(), ""+dayOfMonth, 0).show();// TODO Auto-generated method stub
-
-                }
-            });
-
-        }
-    }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -79,6 +55,7 @@ public class Login extends AppCompatActivity {
 
         init();
     }
+
 
     private void init() {
 
@@ -112,7 +89,13 @@ public class Login extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 setUserInfoWithEnteredData();
+                Intent i;
+                i = new Intent(Login.this, ThirdPage.class);
+                startActivity(i);
+
             }
+
+
         });
     }
 
@@ -179,6 +162,7 @@ public class Login extends AppCompatActivity {
             this.state = state;
             this.email = email;
         }
+
 
         //For debugging purposes
         void print()  {

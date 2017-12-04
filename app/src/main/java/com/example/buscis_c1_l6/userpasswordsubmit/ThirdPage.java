@@ -42,7 +42,7 @@ public class ThirdPage extends AppCompatActivity {
 
 
         emailIntent.setData(Uri.parse("mailto:"));
-        String [] to = {"cpmata@gmail.com"};
+        String [] to = {"cmata@gmail.com"};
         emailIntent.putExtra(Intent.EXTRA_EMAIL, to);
         emailIntent.putExtra(Intent.EXTRA_SUBJECT," Sent from my app!");
         emailIntent.putExtra(Intent.EXTRA_TEXT," Thank you for attending and checking out my app!");
